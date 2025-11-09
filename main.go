@@ -4,12 +4,14 @@ import (
 	"fmt"
 	"net/http"
 
+	"example.com/eventbookingrestapi/db"
 	"example.com/eventbookingrestapi/models"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	fmt.Println("Hello!")
+	db.InitDB()
 	server := gin.Default()
 
 	server.GET("/events", getEvents) // GET, POST, PUT, DELETE, PATCH

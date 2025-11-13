@@ -37,7 +37,7 @@ Notes about authorization header: The middleware expects the token directly in t
 - The app uses SQLite by default and stores the DB in `api.db` in the repository root.
 - JWT secret is currently a constant in `utils/jwt.go`:
 
-   const secretKey = "iwa-werey-po-lo-wo-cypher"
+   const secretKey = "cypheristesting-go"
 
    For production use, move this secret to an environment variable and do not commit it.
 

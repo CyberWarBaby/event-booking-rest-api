@@ -1,2 +1,2 @@
-POST http://localhost:8080/events/1/register
+DELETE  http://localhost:8080/events/1/register
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJleHAiOjE3NjMwNTQ5MTYsInVzZXJJRCI6MX0.7_qXEUBRRMN8bO11tTLggeTyc8bHVxIg_-ic5n4lNd8

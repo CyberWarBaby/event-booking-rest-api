@@ -14,7 +14,7 @@ type User struct {
 }
 
 func (u User) Save() error {
-	query := "INSERT INTO users(email, password) VALUES(?, ?)"
+	query := "INSERT INTO users(email, password) VALUES($1, $2)"
 
 	stmt, err := db.DB.Prepare(query)
 
@@ -42,7 +42,7 @@ func (u User) Save() error {
 }
 
 func (u *User) ValidateCredentials() error {
-	query := "SELECT id, password FROM users WHERE email = ?"
+	query := "SELECT id, password FROM users WHERE email = $1"
 	row := db.DB.QueryRow(query, u.Email)
 
 	var retrievedPassword string

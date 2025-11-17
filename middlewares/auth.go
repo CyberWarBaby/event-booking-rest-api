@@ -2,6 +2,7 @@ package middlewares
 
 import (
 	"net/http"
+	"strings"
 
 	"example.com/eventbookingrestapi/utils"
 	"github.com/gin-gonic/gin"
@@ -14,7 +15,7 @@ func Authenticate(context *gin.Context) {
 		context.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"message": "Not authorized"})
 		return
 	}
-
+	token = strings.TrimSpace(strings.TrimPrefix(token, "Bearer "))
 	userId, err := utils.VerifyToken(token)
 	if err != nil {
 		context.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"message": "Not authorized"})
